@@ -41,6 +41,7 @@ class PrefixTuningConfig(PromptLearningConfig):
     )
 
     def __post_init__(self):
+        print('%s __post_init__ called', self.__classs__.__name__)
         self.peft_type = PeftType.PREFIX_TUNING
 
 
@@ -75,6 +76,7 @@ class PrefixEncoder(torch.nn.Module):
     """
 
     def __init__(self, config):
+        print('%s __init__ called', self.__classs__.__name__)
         super().__init__()
         self.prefix_projection = config.prefix_projection
         token_dim = config.token_dim

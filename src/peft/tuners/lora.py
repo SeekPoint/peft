@@ -84,6 +84,7 @@ class LoraConfig(PeftConfig):
     )
 
     def __post_init__(self):
+        print('%s __post_init__ called', self.__classs__.__name__)
         self.peft_type = PeftType.LORA
 
 
@@ -472,6 +473,7 @@ if is_bnb_available():
             lora_dropout: float = 0.0,
             **kwargs,
         ):
+            print('%s __init__ called', self.__classs__.__name__)
             bnb.nn.Linear8bitLt.__init__(
                 self,
                 in_features,

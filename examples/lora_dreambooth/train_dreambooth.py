@@ -464,6 +464,7 @@ class DreamBoothDataset(Dataset):
         size=512,
         center_crop=False,
     ):
+        print('%s __init__ called', self.__classs__.__name__)
         self.size = size
         self.center_crop = center_crop
         self.tokenizer = tokenizer
@@ -555,6 +556,7 @@ class PromptDataset(Dataset):
     "A simple dataset to prepare the prompts to generate class images on multiple GPUs."
 
     def __init__(self, prompt, num_samples):
+        print('%s __init__ called', self.__classs__.__name__)
         self.prompt = prompt
         self.num_samples = num_samples
 

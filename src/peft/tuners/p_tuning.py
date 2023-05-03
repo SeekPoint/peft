@@ -59,6 +59,7 @@ class PromptEncoderConfig(PromptLearningConfig):
     )
 
     def __post_init__(self):
+        print('%s __post_init__ called', self.__classs__.__name__)
         self.peft_type = PeftType.P_TUNING
 
 
@@ -101,6 +102,7 @@ class PromptEncoder(torch.nn.Module):
     """
 
     def __init__(self, config):
+        print('%s __init__ called', self.__classs__.__name__)
         super().__init__()
         self.token_dim = config.token_dim
         self.input_size = self.token_dim

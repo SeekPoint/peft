@@ -59,6 +59,7 @@ class PromptTuningConfig(PromptLearningConfig):
     )
 
     def __post_init__(self):
+        print('%s __post_init__ called', self.__classs__.__name__)
         self.peft_type = PeftType.PROMPT_TUNING
 
 
@@ -91,6 +92,7 @@ class PromptEmbedding(torch.nn.Module):
     """
 
     def __init__(self, config, word_embeddings):
+        print('%s __init__ called', self.__classs__.__name__)
         super().__init__()
 
         total_virtual_tokens = config.num_virtual_tokens * config.num_transformer_submodules
